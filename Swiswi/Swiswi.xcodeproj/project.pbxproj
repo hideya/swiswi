@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89AAEA9F1B473E2A0024A3D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AAEA9E1B473E2A0024A3D5 /* AppDelegate.swift */; };
+		89AAEAA11B473E2A0024A3D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEAA01B473E2A0024A3D5 /* Images.xcassets */; };
+		89AAEAA41B473E2A0024A3D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEAA21B473E2A0024A3D5 /* MainMenu.xib */; };
+		89AAEAB01B473E2A0024A3D5 /* SwiswiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AAEAAF1B473E2A0024A3D5 /* SwiswiTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89AAEAAA1B473E2A0024A3D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89AAEA911B473E2A0024A3D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89AAEA981B473E2A0024A3D5;
+			remoteInfo = Swiswi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89AAEA991B473E2A0024A3D5 /* Swiswi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiswi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AAEA9D1B473E2A0024A3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AAEA9E1B473E2A0024A3D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89AAEAA01B473E2A0024A3D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89AAEAA31B473E2A0024A3D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		89AAEAA91B473E2A0024A3D5 /* SwiswiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiswiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AAEAAE1B473E2A0024A3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AAEAAF1B473E2A0024A3D5 /* SwiswiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiswiTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89AAEA961B473E2A0024A3D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AAEAA61B473E2A0024A3D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89AAEA901B473E2A0024A3D5 = {
+			isa = PBXGroup;
+			children = (
+				89AAEA9B1B473E2A0024A3D5 /* Swiswi */,
+				89AAEAAC1B473E2A0024A3D5 /* SwiswiTests */,
+				89AAEA9A1B473E2A0024A3D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89AAEA9A1B473E2A0024A3D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89AAEA991B473E2A0024A3D5 /* Swiswi.app */,
+				89AAEAA91B473E2A0024A3D5 /* SwiswiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89AAEA9B1B473E2A0024A3D5 /* Swiswi */ = {
+			isa = PBXGroup;
+			children = (
+				89AAEA9E1B473E2A0024A3D5 /* AppDelegate.swift */,
+				89AAEAA01B473E2A0024A3D5 /* Images.xcassets */,
+				89AAEAA21B473E2A0024A3D5 /* MainMenu.xib */,
+				89AAEA9C1B473E2A0024A3D5 /* Supporting Files */,
+			);
+			path = Swiswi;
+			sourceTree = "<group>";
+		};
+		89AAEA9C1B473E2A0024A3D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89AAEA9D1B473E2A0024A3D5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89AAEAAC1B473E2A0024A3D5 /* SwiswiTests */ = {
+			isa = PBXGroup;
+			children = (
+				89AAEAAF1B473E2A0024A3D5 /* SwiswiTests.swift */,
+				89AAEAAD1B473E2A0024A3D5 /* Supporting Files */,
+			);
+			path = SwiswiTests;
+			sourceTree = "<group>";
+		};
+		89AAEAAD1B473E2A0024A3D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89AAEAAE1B473E2A0024A3D5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89AAEA981B473E2A0024A3D5 /* Swiswi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89AAEAB31B473E2A0024A3D5 /* Build configuration list for PBXNativeTarget "Swiswi" */;
+			buildPhases = (
+				89AAEA951B473E2A0024A3D5 /* Sources */,
+				89AAEA961B473E2A0024A3D5 /* Frameworks */,
+				89AAEA971B473E2A0024A3D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Swiswi;
+			productName = Swiswi;
+			productReference = 89AAEA991B473E2A0024A3D5 /* Swiswi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89AAEAA81B473E2A0024A3D5 /* SwiswiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89AAEAB61B473E2A0024A3D5 /* Build configuration list for PBXNativeTarget "SwiswiTests" */;
+			buildPhases = (
+				89AAEAA51B473E2A0024A3D5 /* Sources */,
+				89AAEAA61B473E2A0024A3D5 /* Frameworks */,
+				89AAEAA71B473E2A0024A3D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89AAEAAB1B473E2A0024A3D5 /* PBXTargetDependency */,
+			);
+			name = SwiswiTests;
+			productName = SwiswiTests;
+			productReference = 89AAEAA91B473E2A0024A3D5 /* SwiswiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89AAEA911B473E2A0024A3D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "hideya kawahara";
+				TargetAttributes = {
+					89AAEA981B473E2A0024A3D5 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					89AAEAA81B473E2A0024A3D5 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 89AAEA981B473E2A0024A3D5;
+					};
+				};
+			};
+			buildConfigurationList = 89AAEA941B473E2A0024A3D5 /* Build configuration list for PBXProject "Swiswi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89AAEA901B473E2A0024A3D5;
+			productRefGroup = 89AAEA9A1B473E2A0024A3D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89AAEA981B473E2A0024A3D5 /* Swiswi */,
+				89AAEAA81B473E2A0024A3D5 /* SwiswiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89AAEA971B473E2A0024A3D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AAEAA11B473E2A0024A3D5 /* Images.xcassets in Resources */,
+				89AAEAA41B473E2A0024A3D5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AAEAA71B473E2A0024A3D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89AAEA951B473E2A0024A3D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AAEA9F1B473E2A0024A3D5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AAEAA51B473E2A0024A3D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AAEAB01B473E2A0024A3D5 /* SwiswiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89AAEAAB1B473E2A0024A3D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89AAEA981B473E2A0024A3D5 /* Swiswi */;
+			targetProxy = 89AAEAAA1B473E2A0024A3D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89AAEAA21B473E2A0024A3D5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89AAEAA31B473E2A0024A3D5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89AAEAB11B473E2A0024A3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89AAEAB21B473E2A0024A3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		89AAEAB41B473E2A0024A3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Swiswi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		89AAEAB51B473E2A0024A3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Swiswi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		89AAEAB71B473E2A0024A3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiswiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiswi.app/Contents/MacOS/Swiswi";
+			};
+			name = Debug;
+		};
+		89AAEAB81B473E2A0024A3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiswiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiswi.app/Contents/MacOS/Swiswi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89AAEA941B473E2A0024A3D5 /* Build configuration list for PBXProject "Swiswi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AAEAB11B473E2A0024A3D5 /* Debug */,
+				89AAEAB21B473E2A0024A3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89AAEAB31B473E2A0024A3D5 /* Build configuration list for PBXNativeTarget "Swiswi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AAEAB41B473E2A0024A3D5 /* Debug */,
+				89AAEAB51B473E2A0024A3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		89AAEAB61B473E2A0024A3D5 /* Build configuration list for PBXNativeTarget "SwiswiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AAEAB71B473E2A0024A3D5 /* Debug */,
+				89AAEAB81B473E2A0024A3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89AAEA911B473E2A0024A3D5 /* Project object */;
+}

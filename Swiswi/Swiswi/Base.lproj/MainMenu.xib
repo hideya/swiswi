@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Swiswi" customModuleProvider="target">
+            <connections>
+                <outlet property="imageViewInAboutPanel" destination="mTm-XV-mvx" id="vp0-h3-jzJ"/>
+                <outlet property="intervalSlider" destination="QGH-bM-seI" id="jAH-Xu-Yeh"/>
+                <outlet property="quitButton" destination="GgP-x2-xEb" id="uMT-wL-IVY"/>
+                <outlet property="statusMenu" destination="ksb-Ob-z4D" id="pKP-sf-y0A"/>
+                <outlet property="statusMenuFirst" destination="eqX-Sf-s7W" id="yM5-Wc-gEB"/>
+                <outlet property="statusMenuFirstView" destination="yTO-Ub-y3J" id="jPK-X7-gIU"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="File" id="dMs-cI-mzQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Edit" id="5QF-Oa-p0T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Format" id="jxT-CU-nIS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="View" id="H8h-7b-M4v">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Window" id="aUF-d1-5bR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Help" id="wpr-3q-Mcd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="Swiswi" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="265" height="200"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="-1" width="265" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
+                        <rect key="frame" x="19" y="52" width="73" height="76"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
+                    </imageView>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
+                        <rect key="frame" x="16" y="150" width="233" height="34"/>
+                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-J1-6eb">
+                        <rect key="frame" x="103" y="16" width="148" height="140"/>
+                        <textFieldCell key="cell" controlSize="mini" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="MVI-7A-S1l">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, make two-finger swipe on the touch pad. The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif for the Cntl-Tab action.
+http://swiswi.hideya.me</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="320.5" y="177"/>
+        </window>
+        <menu id="ksb-Ob-z4D">
+            <items>
+                <menuItem state="mixed" id="eqX-Sf-s7W">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="570" y="62.5"/>
+        </menu>
+        <box autoresizesSubviews="NO" borderType="line" id="yTO-Ub-y3J">
+            <rect key="frame" x="0.0" y="-1" width="30" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="28" height="171"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-F5-vOi">
+                        <rect key="frame" x="2" y="31" width="25" height="25"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yT5-lE-kqU">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="infoButtonPressed:" target="Voe-Tx-rLC" id="jcu-Y6-WXt"/>
+                        </connections>
+                    </button>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgP-x2-xEb">
+                        <rect key="frame" x="-5" y="-3" width="39" height="38"/>
+                        <buttonCell key="cell" type="round" title="x" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="cb7-e3-KyC">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="16" name=".HelveticaNeueDeskInterface-Regular"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="quitButtonPressed:" target="Voe-Tx-rLC" id="1T4-RN-G4e"/>
+                        </connections>
+                    </button>
+                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-bM-seI">
+                        <rect key="frame" x="4" y="64" width="21" height="100"/>
+                        <sliderCell key="cell" alignment="left" minValue="0.20000000000000001" maxValue="0.5" doubleValue="0.34999999999999998" tickMarkPosition="right" sliderType="linear" id="PNL-Mi-MY6"/>
+                        <connections>
+                            <action selector="sliderChanged:" target="Voe-Tx-rLC" id="g1h-KG-RbF"/>
+                        </connections>
+                    </slider>
+                </subviews>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="675" y="142.5"/>
+        </box>
+    </objects>
+</document>
