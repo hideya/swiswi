@@ -23,43 +23,21 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
-            <items>
-                <menuItem title="File" id="dMs-cI-mzQ">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Edit" id="5QF-Oa-p0T">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Format" id="jxT-CU-nIS">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="View" id="H8h-7b-M4v">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Window" id="aUF-d1-5bR">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Help" id="wpr-3q-Mcd">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-            </items>
-        </menu>
         <window title="Swiswi" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="265" height="200"/>
+            <rect key="contentRect" x="335" y="390" width="265" height="223"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="-1" width="265" height="200"/>
+                <rect key="frame" x="0.0" y="5" width="265" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
-                        <rect key="frame" x="19" y="52" width="73" height="76"/>
+                        <rect key="frame" x="19" y="72" width="73" height="76"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
-                        <rect key="frame" x="16" y="150" width="233" height="34"/>
+                        <rect key="frame" x="16" y="173" width="233" height="34"/>
                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -67,18 +45,20 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-J1-6eb">
-                        <rect key="frame" x="103" y="16" width="148" height="140"/>
+                        <rect key="frame" x="107" y="20" width="148" height="154"/>
                         <textFieldCell key="cell" controlSize="mini" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="MVI-7A-S1l">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, make two-finger swipe on the touch pad. The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif for the Cntl-Tab action.
-http://swiswi.hideya.me</string>
+                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, make two-finger swipe on the touch pad. 
+The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif for the Cntl-Tab action.
+
+github.com/hideya/swiswi</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="320.5" y="177"/>
+            <point key="canvasLocation" x="320.5" y="188.5"/>
         </window>
         <menu id="ksb-Ob-z4D">
             <items>
