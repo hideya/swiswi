@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         switchInterval = defaults.doubleForKey(udkSwitchInterval)
         if switchInterval == 0.0 {
-            switchInterval = 0.2
+            switchInterval = 0.35
             defaults.setDouble(switchInterval, forKey: udkSwitchInterval)
         }
         intervalSlider.doubleValue = switchInterval
