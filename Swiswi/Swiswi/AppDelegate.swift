@@ -123,8 +123,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         var mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
         var mainScreenWidth = NSScreen.mainScreen()!.frame.size.width
+        var infoWindowWidth = window.frame.size.width
         var frame = window.frame
-        frame.origin = CGPoint(x: mainScreenWidth / 2, y: mainScreenHeight)
+        frame.origin = CGPoint(x: mainScreenWidth / 2 - infoWindowWidth / 2, y: mainScreenHeight)
         NSApp.activateIgnoringOtherApps(true)
         window.setFrame(frame, display: true)
         window.makeKeyAndOrderFront(self)
