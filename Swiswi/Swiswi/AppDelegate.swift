@@ -132,7 +132,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func quitButtonPressed(sender: AnyObject) {
-        exit(0)
+        NSApplication.sharedApplication().terminate(self)
     }
 }
 
