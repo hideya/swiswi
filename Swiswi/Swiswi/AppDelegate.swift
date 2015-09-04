@@ -131,6 +131,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(self)
     }
 
+    @IBAction func showMoreInfo(sender: AnyObject) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://hideya.github.io/swiswi/")!)
+        window.close()
+    }
+
     @IBAction func quitButtonPressed(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(self)
     }

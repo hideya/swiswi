@@ -16,7 +16,6 @@
             <connections>
                 <outlet property="imageViewInAboutPanel" destination="mTm-XV-mvx" id="vp0-h3-jzJ"/>
                 <outlet property="intervalSlider" destination="QGH-bM-seI" id="jAH-Xu-Yeh"/>
-                <outlet property="quitButton" destination="GgP-x2-xEb" id="uMT-wL-IVY"/>
                 <outlet property="statusMenu" destination="ksb-Ob-z4D" id="pKP-sf-y0A"/>
                 <outlet property="statusMenuFirst" destination="eqX-Sf-s7W" id="yM5-Wc-gEB"/>
                 <outlet property="statusMenuFirstView" destination="yTO-Ub-y3J" id="jPK-X7-gIU"/>
@@ -27,39 +26,48 @@
         <window title="Swiswi" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="275" height="223"/>
+            <rect key="contentRect" x="335" y="390" width="300" height="200"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="275" height="223"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
-                        <rect key="frame" x="19" y="73" width="73" height="76"/>
+                        <rect key="frame" x="22" y="62" width="73" height="76"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
-                        <rect key="frame" x="16" y="173" width="233" height="34"/>
+                        <rect key="frame" x="34" y="151" width="233" height="34"/>
                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFc-Th-FNK">
+                        <rect key="frame" x="109" y="14" width="179" height="17"/>
+                        <buttonCell key="cell" type="inline" title="http://hideya.github.io/swiswi" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="kJR-TG-0YB">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystemBold"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showMoreInfo:" target="Voe-Tx-rLC" id="zLV-0s-LHR"/>
+                        </connections>
+                    </button>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-J1-6eb">
-                        <rect key="frame" x="101" y="6" width="165" height="168"/>
+                        <rect key="frame" x="111" y="33" width="178" height="119"/>
                         <textFieldCell key="cell" controlSize="mini" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="MVI-7A-S1l">
                             <font key="font" metaFont="smallSystem"/>
                             <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, make two-finger swipe on the touch pad. 
 The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shift for the Cntl-Tab action.
-
-http://hideya.github.io/swiswi</string>
+</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="325.5" y="188.5"/>
+            <point key="canvasLocation" x="314" y="183"/>
         </window>
         <menu id="ksb-Ob-z4D">
             <items>
