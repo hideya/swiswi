@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -26,18 +27,15 @@
         <window title="Swiswi" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="300" height="200"/>
+            <rect key="contentRect" x="335" y="390" width="250" height="250"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
-                        <rect key="frame" x="22" y="62" width="73" height="76"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
-                    </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
-                        <rect key="frame" x="34" y="151" width="233" height="34"/>
+                        <rect key="frame" x="9" y="202" width="233" height="34"/>
+                        <animations/>
                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -45,8 +43,9 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFc-Th-FNK">
-                        <rect key="frame" x="109" y="14" width="179" height="17"/>
-                        <buttonCell key="cell" type="inline" title="http://hideya.github.io/swiswi" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="kJR-TG-0YB">
+                        <rect key="frame" x="111" y="13" width="110" height="17"/>
+                        <animations/>
+                        <buttonCell key="cell" type="inline" title="Visit the Web Site" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="kJR-TG-0YB">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystemBold"/>
                         </buttonCell>
@@ -55,19 +54,27 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-J1-6eb">
-                        <rect key="frame" x="111" y="33" width="178" height="119"/>
+                        <rect key="frame" x="109" y="38" width="131" height="171"/>
+                        <animations/>
                         <textFieldCell key="cell" controlSize="mini" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="MVI-7A-S1l">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, make two-finger swipe on the touch pad. 
-The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shift for the Cntl-Tab action.
+                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, and make two-finger swipe on the track pad. 
+The current window will switch repeatedly just like Cntl-F4.
+Press Cntl or Shift key together with the swipe for the Cntl-Tab action.
 </string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
+                        <rect key="frame" x="20" y="93" width="73" height="76"/>
+                        <animations/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
+                    </imageView>
                 </subviews>
+                <animations/>
             </view>
-            <point key="canvasLocation" x="314" y="183"/>
+            <point key="canvasLocation" x="314" y="219"/>
         </window>
         <menu id="ksb-Ob-z4D">
             <items>
@@ -78,14 +85,15 @@ The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif
             <point key="canvasLocation" x="570" y="62.5"/>
         </menu>
         <box autoresizesSubviews="NO" borderType="line" id="yTO-Ub-y3J">
-            <rect key="frame" x="0.0" y="-1" width="30" height="187"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
+            <view key="contentView" id="7dS-Dw-gi7">
                 <rect key="frame" x="1" y="1" width="28" height="171"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-F5-vOi">
                         <rect key="frame" x="2" y="31" width="25" height="25"/>
+                        <animations/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yT5-lE-kqU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -96,6 +104,7 @@ The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif
                     </button>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgP-x2-xEb">
                         <rect key="frame" x="-5" y="-3" width="39" height="38"/>
+                        <animations/>
                         <buttonCell key="cell" type="round" title="x" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="cb7-e3-KyC">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="16" name=".HelveticaNeueDeskInterface-Regular"/>
@@ -106,13 +115,16 @@ The current window will switch repeatedly just like Cntl-F4.  Press Cntl or Shif
                     </button>
                     <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-bM-seI">
                         <rect key="frame" x="4" y="64" width="21" height="100"/>
+                        <animations/>
                         <sliderCell key="cell" alignment="left" minValue="0.20000000000000001" maxValue="0.5" doubleValue="0.34999999999999998" tickMarkPosition="right" sliderType="linear" id="PNL-Mi-MY6"/>
                         <connections>
                             <action selector="sliderChanged:" target="Voe-Tx-rLC" id="g1h-KG-RbF"/>
                         </connections>
                     </slider>
                 </subviews>
+                <animations/>
             </view>
+            <animations/>
             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="675" y="142.5"/>

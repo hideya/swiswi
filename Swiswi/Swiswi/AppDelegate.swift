@@ -37,9 +37,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             defaults.setDouble(switchInterval, forKey: udkSwitchInterval)
         }
         intervalSlider.doubleValue = switchInterval
-        println(switchInterval);
+        print(switchInterval);
 
-        var desktopWindowNumber = getDesktopWindowNumber();
+        let desktopWindowNumber = getDesktopWindowNumber();
 
         NSEvent.addGlobalMonitorForEventsMatchingMask(.ScrollWheelMask, handler: { event in
 
@@ -49,9 +49,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             let shiftKeyPressed = event.modifierFlags.isSet(.ShiftKeyMask)
             let ctrlKeyPressed = event.modifierFlags.isSet(.ControlKeyMask)
-            var mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
-            var statusBarHeight = NSStatusBar.systemStatusBar().thickness
-            var statusBarBottomY = mainScreenHeight - statusBarHeight;
+            let mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
+            let statusBarHeight = NSStatusBar.systemStatusBar().thickness
+            let statusBarBottomY = mainScreenHeight - statusBarHeight;
 
             if event.locationInWindow.y < statusBarBottomY && event.windowNumber != desktopWindowNumber {
                 return;
@@ -72,14 +72,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             self.prevEventTimestamp = event.timestamp;
 
-            var windowLoopForwarad = (event.scrollingDeltaY > 0);
+            let windowLoopForwarad = (event.scrollingDeltaY > 0);
 
             if ctrlKeyPressed || shiftKeyPressed {
-                postKeyboardEvent(0x30/*kVK_Tab*/, true, true, !windowLoopForwarad);
-                postKeyboardEvent(0x30/*kVK_Tab*/, false, true, !windowLoopForwarad);
+                postKeyboardEvent(0x30/*kVK_Tab*/, keyDown: true, controlKeyDown: true, shiftKeyDown: !windowLoopForwarad);
+                postKeyboardEvent(0x30/*kVK_Tab*/, keyDown: false, controlKeyDown: true, shiftKeyDown: !windowLoopForwarad);
             } else {
-                postKeyboardEvent(0x76/*kVK_F4*/, true, true, !windowLoopForwarad);
-                postKeyboardEvent(0x76/*kVK_F4*/, false, true, !windowLoopForwarad);
+                postKeyboardEvent(0x76/*kVK_F4*/, keyDown: true, controlKeyDown: true, shiftKeyDown: !windowLoopForwarad);
+                postKeyboardEvent(0x76/*kVK_F4*/, keyDown: false, controlKeyDown: true, shiftKeyDown: !windowLoopForwarad);
             }
 
         })
@@ -97,23 +97,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func initAboutWindow() {
 //        window.orderOut(self)
-        window.titlebarAppearsTransparent = true
+        if #available(OSX 10.10, *) {
+            window.titlebarAppearsTransparent = true
+        } else {
+            // Fallback on earlier versions
+        }
         window.movableByWindowBackground  = true
         imageViewInAboutPanel.image = NSImage(named: "AppIcon")
     }
 
     @IBAction func sliderChanged(sender: AnyObject) {
-        var value = sender.doubleValue
-        println(value);
+        let value = sender.doubleValue
+        print(value);
         switchInterval = value;
         self.defaults.setDouble(switchInterval, forKey: udkSwitchInterval)
     }
 
     @IBAction func checkChanged(sender: AnyObject) {
-        var value = sender.intValue
+        let value = sender.intValue
         self.enabled = (value > 0)
         self.intervalSlider.enabled = (value > 0)
-        println(value);
+        print(value);
     }
 
     @IBAction func infoButtonPressed(sender: AnyObject) {
@@ -121,9 +125,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        var pointRelativeToScreen = self.statusMenuFirst.view!.window!.convertRectToScreen(frameRelativeToWindow).origin.x;
 //        NSLog("*** %d", pointRelativeToScreen)
 
-        var mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
-        var mainScreenWidth = NSScreen.mainScreen()!.frame.size.width
-        var infoWindowWidth = window.frame.size.width
+        let mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
+        let mainScreenWidth = NSScreen.mainScreen()!.frame.size.width
+        let infoWindowWidth = window.frame.size.width
         var frame = window.frame
         frame.origin = CGPoint(x: mainScreenWidth / 2 - infoWindowWidth / 2, y: mainScreenHeight)
         NSApp.activateIgnoringOtherApps(true)
@@ -143,12 +147,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 func getDesktopWindowNumber() -> Int {
     var desktopWindowNumber = 0;
-    let options = CGWindowListOption(kCGWindowListOptionOnScreenOnly)
-    let cfInfoList = CGWindowListCopyWindowInfo(options, CGWindowID(0)).takeRetainedValue()
+    let options = CGWindowListOption(arrayLiteral: CGWindowListOption.OptionOnScreenOnly)
+    let infoList = CGWindowListCopyWindowInfo(options, CGWindowID(0))
 
-    for winDict in cfInfoList as! [NSDictionary] {
-        var layer = winDict["kCGWindowLayer"] as! Int
-        var winOwnerName = winDict["kCGWindowOwnerName"] as! NSString
+    for winDict in (infoList as NSArray? as? [[String: AnyObject]])! {
+        let layer = winDict["kCGWindowLayer"] as! Int
+        let winOwnerName = winDict["kCGWindowOwnerName"] as! NSString
 
         if layer < 0 && winOwnerName == "Finder" {
             desktopWindowNumber = winDict["kCGWindowNumber"] as! Int
@@ -158,27 +162,30 @@ func getDesktopWindowNumber() -> Int {
 }
 
 func postKeyboardEvent(keyCode: CGKeyCode, keyDown:Bool, controlKeyDown:Bool, shiftKeyDown:Bool) {
-    let src = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()
-    let keyEvent = CGEventCreateKeyboardEvent(src, keyCode, keyDown).takeRetainedValue()
-    if controlKeyDown {
-        CGEventSetFlags(keyEvent, CGEventFlags(kCGEventFlagMaskControl));
-    }
-    if shiftKeyDown {
-        CGEventSetFlags(keyEvent, CGEventFlags(kCGEventFlagMaskShift));
-    }
+    let src = CGEventSourceCreate(CGEventSourceStateID.HIDSystemState)
+    let keyEvent = CGEventCreateKeyboardEvent(src, keyCode, keyDown)
+
     if controlKeyDown && shiftKeyDown {
-        CGEventSetFlags(keyEvent, CGEventFlags(kCGEventFlagMaskControl | kCGEventFlagMaskShift));
+        CGEventSetFlags(keyEvent,
+            // there should be a better way...
+            CGEventFlags(rawValue: (CGEventFlags.MaskControl.rawValue | CGEventFlags.MaskShift.rawValue))!);
+    }
+    else if controlKeyDown {
+        CGEventSetFlags(keyEvent, CGEventFlags.MaskControl);
+    }
+    else if shiftKeyDown {
+        CGEventSetFlags(keyEvent, CGEventFlags.MaskShift);
     }
 
-    let location = CGEventTapLocation(kCGHIDEventTap)
+    let location = CGEventTapLocation.CGHIDEventTap
 
     CGEventPost(location, keyEvent);
 }
 
 extension NSEventModifierFlags {
 
-    func isSet(bit: NSEventModifierFlags) -> Bool {
-        return self & bit == bit
+    func isSet(flag: NSEventModifierFlags) -> Bool {
+        return self.rawValue & flag.rawValue == flag.rawValue
     }
 
 }
