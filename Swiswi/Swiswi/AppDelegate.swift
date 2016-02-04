@@ -48,8 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 return
             }
 
-            let shiftKeyPressed = event.modifierFlags.isSet(.ShiftKeyMask)
-            let ctrlKeyPressed = event.modifierFlags.isSet(.ControlKeyMask)
             let mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
             let statusBarHeight = NSStatusBar.systemStatusBar().thickness
             let statusBarBottomY = mainScreenHeight - statusBarHeight
@@ -73,12 +71,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             self.prevEventTimestamp = event.timestamp
 
-            let windowLoopBackwarad = (event.scrollingDeltaY < 0)
+            let windowLoopForwarad = (event.scrollingDeltaY > 0)
+
+            let ctrlKeyPressed = event.modifierFlags.isSet(.ControlKeyMask)
+            let shiftKeyPressed = event.modifierFlags.isSet(.ShiftKeyMask)
 
             if ctrlKeyPressed || shiftKeyPressed {
-                postKeyDownAndUpEvents(CGKeyCode(kVK_Tab), command: false, control: true, shift: windowLoopBackwarad)
+                if windowLoopForwarad {
+                    postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_RightBracket), command: true, control: false, shift: true)
+                } else {
+                    postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_LeftBracket), command: true, control: false, shift: true)
+                }
             } else {
-                postKeyDownAndUpEvents(CGKeyCode(kVK_F4), command: false, control: true, shift: windowLoopBackwarad)
+                postKeyDownAndUpEvents(CGKeyCode(kVK_F4), command: false, control: true, shift: !windowLoopForwarad)
             }
 
         })
@@ -142,19 +147,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 func getDesktopWindowNumber() -> Int {
-    var desktopWindowNumber = 0
     let options = CGWindowListOption(arrayLiteral: CGWindowListOption.OptionOnScreenOnly)
     let infoList = CGWindowListCopyWindowInfo(options, CGWindowID(0))
 
     for winDict in (infoList as NSArray? as? [[String: AnyObject]])! {
         let layer = winDict["kCGWindowLayer"] as! Int
         let winOwnerName = winDict["kCGWindowOwnerName"] as! NSString
+        let winNumber =  winDict["kCGWindowNumber"] as! Int
 
         if layer < 0 && winOwnerName == "Finder" {
-            desktopWindowNumber = winDict["kCGWindowNumber"] as! Int
+            return winNumber
         }
     }
-    return desktopWindowNumber
+    return 0
 }
 
 func postKeyDownAndUpEvents(keyCode: CGKeyCode, command:Bool, control:Bool, shift:Bool) {
