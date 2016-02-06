@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var switchInterval : Double = 0.0
     private var prevEventTimestamp : NSTimeInterval = 0
     private let defaults = NSUserDefaults.standardUserDefaults()
-    private let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 
