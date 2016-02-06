@@ -131,10 +131,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let xRelativeToScreen = self.statusMenuFirst.view!.window!.convertRectToScreen(frameRelativeToWindow).origin.x
         let mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
         let infoWindowWidth = window.frame.size.width
-        var frame = window.frame
-        frame.origin = CGPoint(x: xRelativeToScreen - infoWindowWidth - 10, y: mainScreenHeight)
+        window.setFrameOrigin(CGPoint(x: xRelativeToScreen - infoWindowWidth - 10, y: mainScreenHeight))
         NSApp.activateIgnoringOtherApps(true)
-        window.setFrame(frame, display: true)
         window.makeKeyAndOrderFront(self)
     }
 
