@@ -21,11 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var intervalSlider: NSSlider!
     @IBOutlet weak var imageViewInAboutPanel: NSImageView!
 
-    var enabled : Bool = true
-    var switchInterval : Double = 0.0
-    var prevEventTimestamp : NSTimeInterval = 0
-    let defaults = NSUserDefaults.standardUserDefaults()
-    let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    private var enabled : Bool = true
+    private var switchInterval : Double = 0.0
+    private var prevEventTimestamp : NSTimeInterval = 0
+    private let defaults = NSUserDefaults.standardUserDefaults()
+    private let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 
@@ -80,13 +80,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if tabSwitching {
                 let windowLoopForwarad = (event.scrollingDeltaX > 0)
                 if windowLoopForwarad {
-                    postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_RightBracket), command: true, control: false, shift: true)
+                    self.postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_RightBracket), command: true, control: false, shift: true)
                 } else {
-                    postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_LeftBracket), command: true, control: false, shift: true)
+                    self.postKeyDownAndUpEvents(CGKeyCode(kVK_ANSI_LeftBracket), command: true, control: false, shift: true)
                 }
             } else {
                 let windowLoopForwarad = (event.scrollingDeltaY > 0)
-                postKeyDownAndUpEvents(CGKeyCode(kVK_F4), command: false, control: true, shift: !windowLoopForwarad)
+                self.postKeyDownAndUpEvents(CGKeyCode(kVK_F4), command: false, control: true, shift: !windowLoopForwarad)
             }
         }
     }
@@ -95,13 +95,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-    func initStatusMenu() {
+    private func getDesktopWindowNumber() -> Int {
+        let options = CGWindowListOption(arrayLiteral: CGWindowListOption.OptionOnScreenOnly)
+        let infoList = CGWindowListCopyWindowInfo(options, CGWindowID(0))
+
+        for winDict in (infoList as NSArray? as? [[String: AnyObject]])! {
+            let layer = winDict["kCGWindowLayer"] as! Int
+            let winOwnerName = winDict["kCGWindowOwnerName"] as! NSString
+            let winNumber =  winDict["kCGWindowNumber"] as! Int
+
+            if layer < 0 && winOwnerName == "Finder" {
+                return winNumber
+            }
+        }
+        return 0
+    }
+
+    private func postKeyDownAndUpEvents(keyCode: CGKeyCode, command:Bool, control:Bool, shift:Bool) {
+        // there should be a better way...
+        let flags = CGEventFlags(rawValue:
+            ((command ? CGEventFlags.MaskCommand.rawValue : 0) |
+                (control ? CGEventFlags.MaskControl.rawValue : 0) |
+                (shift ? CGEventFlags.MaskShift.rawValue : 0)))!
+
+        let src = CGEventSourceCreate(CGEventSourceStateID.HIDSystemState)
+        let keyDownEvent = CGEventCreateKeyboardEvent(src, keyCode, true)
+        let keyUpEvent = CGEventCreateKeyboardEvent(src, keyCode, false)
+
+        CGEventSetFlags(keyDownEvent, flags)
+        CGEventSetFlags(keyUpEvent, flags)
+        
+        let location = CGEventTapLocation.CGHIDEventTap
+        CGEventPost(location, keyDownEvent)
+        CGEventPost(location, keyUpEvent)
+    }
+
+    private func initStatusMenu() {
         statusItem.image = NSImage(named: "StatusBarIcon")
         statusItem.menu = self.statusMenu
         statusMenuFirst.view = self.statusMenuFirstView
     }
 
-    func initAboutWindow() {
+    private func initAboutWindow() {
         window.orderOut(self)
         if #available(OSX 10.10, *) {
             window.titlebarAppearsTransparent = true
@@ -145,39 +180,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.sharedApplication().terminate(self)
     }
 }
-
-func getDesktopWindowNumber() -> Int {
-    let options = CGWindowListOption(arrayLiteral: CGWindowListOption.OptionOnScreenOnly)
-    let infoList = CGWindowListCopyWindowInfo(options, CGWindowID(0))
-
-    for winDict in (infoList as NSArray? as? [[String: AnyObject]])! {
-        let layer = winDict["kCGWindowLayer"] as! Int
-        let winOwnerName = winDict["kCGWindowOwnerName"] as! NSString
-        let winNumber =  winDict["kCGWindowNumber"] as! Int
-
-        if layer < 0 && winOwnerName == "Finder" {
-            return winNumber
-        }
-    }
-    return 0
-}
-
-func postKeyDownAndUpEvents(keyCode: CGKeyCode, command:Bool, control:Bool, shift:Bool) {
-    // there should be a better way...
-    let flags = CGEventFlags(rawValue:
-        ((command ? CGEventFlags.MaskCommand.rawValue : 0) |
-            (control ? CGEventFlags.MaskControl.rawValue : 0) |
-            (shift ? CGEventFlags.MaskShift.rawValue : 0)))!
-
-    let src = CGEventSourceCreate(CGEventSourceStateID.HIDSystemState)
-    let keyDownEvent = CGEventCreateKeyboardEvent(src, keyCode, true)
-    let keyUpEvent = CGEventCreateKeyboardEvent(src, keyCode, false)
-
-    CGEventSetFlags(keyDownEvent, flags)
-    CGEventSetFlags(keyUpEvent, flags)
-
-    let location = CGEventTapLocation.CGHIDEventTap
-    CGEventPost(location, keyDownEvent)
-    CGEventPost(location, keyUpEvent)
-}
-
