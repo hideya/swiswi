@@ -21,8 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var intervalSlider: NSSlider!
     @IBOutlet weak var imageViewInAboutPanel: NSImageView!
 
-    private var enabled : Bool = true
-    private var switchInterval : Double = 0.0
+    private var enabled = true
+    private var switchInterval = 0.0
     private var prevEventTimestamp : NSTimeInterval = 0
     private let defaults = NSUserDefaults.standardUserDefaults()
     private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
@@ -164,9 +164,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func infoButtonPressed(sender: AnyObject) {
         let frameRelativeToWindow = self.statusMenuFirst.view!.convertRect(self.statusMenuFirst.view!.bounds, toView: nil)
         let xRelativeToScreen = self.statusMenuFirst.view!.window!.convertRectToScreen(frameRelativeToWindow).origin.x
-        let mainScreenHeight = NSScreen.mainScreen()!.frame.size.height
         let infoWindowWidth = window.frame.size.width
-        window.setFrameOrigin(CGPoint(x: xRelativeToScreen - infoWindowWidth - 10, y: mainScreenHeight))
+        let infoWindowHeight = window.frame.size.height
+        let mainScreenHeight = NSScreen.mainScreen()!.visibleFrame.size.height
+        window.setFrameOrigin(CGPoint(x: xRelativeToScreen - infoWindowWidth - 20, y: mainScreenHeight - infoWindowHeight - 20))
+
         NSApp.activateIgnoringOtherApps(true)
         window.makeKeyAndOrderFront(self)
     }
