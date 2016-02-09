@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -27,24 +27,14 @@
         <window title="Swiswi" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="250" height="250"/>
+            <rect key="contentRect" x="335" y="390" width="300" height="250"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
-                        <rect key="frame" x="9" y="202" width="233" height="34"/>
-                        <animations/>
-                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFc-Th-FNK">
-                        <rect key="frame" x="111" y="13" width="110" height="17"/>
-                        <animations/>
+                        <rect key="frame" x="111" y="19" width="110" height="17"/>
                         <buttonCell key="cell" type="inline" title="Visit the Web Site" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="kJR-TG-0YB">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystemBold"/>
@@ -54,25 +44,29 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-J1-6eb">
-                        <rect key="frame" x="109" y="38" width="131" height="171"/>
-                        <animations/>
+                        <rect key="frame" x="109" y="38" width="179" height="157"/>
                         <textFieldCell key="cell" controlSize="mini" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="MVI-7A-S1l">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, and make two-finger swipe on the track pad. 
-The current window will switch repeatedly just like Cntl-F4.
-Press Cntl or Shift key together with the swipe for the Cntl-Tab action.
-</string>
+                            <string key="title">Move the mouse cursor onto the top menu bar or the desktop background, and make two-finger swipe on the track pad.
+Vertical move switches the current window repeatedly just like pressing Cntl-F4.
+Horizontal move switches the current tab repeatedly just like pressing Command-Shift-[.</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-XV-mvx">
-                        <rect key="frame" x="20" y="93" width="73" height="76"/>
-                        <animations/>
+                        <rect key="frame" x="20" y="89" width="73" height="76"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EPU-Sy-Ysz"/>
                     </imageView>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPA-KO-h9q">
+                        <rect key="frame" x="34" y="196" width="233" height="34"/>
+                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="A Simple Window Switcher" id="ysD-KB-RQF">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
-                <animations/>
             </view>
             <point key="canvasLocation" x="314" y="219"/>
         </window>
@@ -93,10 +87,9 @@ Press Cntl or Shift key together with the swipe for the Cntl-Tab action.
                 <subviews>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-F5-vOi">
                         <rect key="frame" x="2" y="31" width="25" height="25"/>
-                        <animations/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yT5-lE-kqU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" size="13" name="AppleColorEmoji"/>
                         </buttonCell>
                         <connections>
                             <action selector="infoButtonPressed:" target="Voe-Tx-rLC" id="jcu-Y6-WXt"/>
@@ -104,10 +97,9 @@ Press Cntl or Shift key together with the swipe for the Cntl-Tab action.
                     </button>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgP-x2-xEb">
                         <rect key="frame" x="-5" y="-3" width="39" height="38"/>
-                        <animations/>
-                        <buttonCell key="cell" type="round" title="x" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="cb7-e3-KyC">
+                        <buttonCell key="cell" type="round" title="❌" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="cb7-e3-KyC" colorLabel="IBBuiltInLabel-Red">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="16" name=".HelveticaNeueDeskInterface-Regular"/>
+                            <font key="font" size="16" name="AppleColorEmoji"/>
                         </buttonCell>
                         <connections>
                             <action selector="quitButtonPressed:" target="Voe-Tx-rLC" id="1T4-RN-G4e"/>
@@ -115,16 +107,13 @@ Press Cntl or Shift key together with the swipe for the Cntl-Tab action.
                     </button>
                     <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-bM-seI">
                         <rect key="frame" x="4" y="64" width="21" height="100"/>
-                        <animations/>
                         <sliderCell key="cell" alignment="left" minValue="0.20000000000000001" maxValue="0.5" doubleValue="0.34999999999999998" tickMarkPosition="right" sliderType="linear" id="PNL-Mi-MY6"/>
                         <connections>
                             <action selector="sliderChanged:" target="Voe-Tx-rLC" id="g1h-KG-RbF"/>
                         </connections>
                     </slider>
                 </subviews>
-                <animations/>
             </view>
-            <animations/>
             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="675" y="142.5"/>
